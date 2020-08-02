@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 def homepage_view(request):
     context = {
-        "page_title": 'Home Page',
+        "page_title": 'Find Route',
         "home_isActive": 'active',
         "about_isActive": '',
     }
