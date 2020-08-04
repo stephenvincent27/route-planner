@@ -11,5 +11,10 @@ def homepage_view(request):
     return render(request, '../templates/base.html', context)
 
 def about_view(request):
-    context = {}
+    context = {
+        "page_title": 'About',
+        "home_isActive": '',
+        "listOfStations": '',
+        "about_isActive": 'active',
+    }
     return render(request, '../templates/about.html', context)

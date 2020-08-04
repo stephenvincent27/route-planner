@@ -1,0 +1,21 @@
+body {
+    padding-top: 80px;
+}
+
+.media {
+    padding: 20px 0px;
+}
+
+img.stp {
+    width: 20%;
+}
+
+.medcontent {
+    display: block;
+    margin: 10px;
+}
+
+.iconright {
+    display: flex;
+    justify-content: space-between;
+}

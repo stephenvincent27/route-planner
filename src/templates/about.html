@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load static %}
+
 {% block content %}
 
 <div class="container">
@@ -9,16 +11,42 @@
         </div>
     </div>
 
-    <div class="row align-items-center">
-        <div class="col">
+    <div class="row justify-content-center">
+        <div class="col-10">
             <div class="media">
+                <img src="{% static 'img/stp.png' %}" alt="Stephen" class="stp img-thumbnail mr-3 align-self-center">
                 <div class="media-body">
-                    <h3> Stephen Vincent </h3>
-                    <em> Will discuss with you about the duality of this world while catching yet another Abra in Pokemon GO. Vibing to Ryos at the moment. </em>
+                    <h3 class="medcontent"> Stephen Vincent </h3>
+                    <em class="medcontent"> Will discuss with you about the duality of this world while catching yet another Abra in Pokemon GO. Vibing to Ryos at the moment. </em>
+                    <br>
+                    <a class="btn btn-social-icon btn-facebook" href="https://www.facebook.com/stephen.vincent.007/" target="_blank"> <span class="fab fa-facebook-square fa-2x"> </a>
+                    <a class="btn btn-social-icon btn-linkedin" href="https://www.linkedin.com/in/stephenvincent27/" target="_blank"> <span class="fab fa-linkedin fa-2x"> </a>
+                    <a class="btn btn-social-icon btn-github" href="https://github.com/stephenvincent27" target="_blank"> <span class="fab fa-github-square fa-2x"> </a>
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="row justify-content-center">
+        <div class="col-10">
+            <div class="media">
+                <div class="media-body">
+                    <h3 class="medcontent" style="text-align: right; "> Divyansh Srivastava </h3>
+                    <em class="medcontent" style="text-align: right; "> Enter description! </em>
+                    <br>
+                    
+                    <div style="text-align: right;"> 
+                        <a class="btn btn-social-icon btn-github" href="https://github.com/DivyanshSrivastava04" target="_blank"> <span class="fab fa-github-square fa-2x"> </a>
+                        <a class="btn btn-social-icon btn-linkedin" href="https://www.linkedin.com/in/divyansh-srivastava-749348171/" target="_blank"> <span class="fab fa-linkedin fa-2x"> </a>
+                        <a class="btn btn-social-icon btn-facebook" href="https://www.facebook.com/divyansh.srivastava.5264" target="_blank"> <span class="fab fa-facebook-square fa-2x"> </a> 
+                    </div>
+                    
+                </div>
+                <img src="{% static 'img/div2.png' %}" alt="Divyansh" class="stp img-thumbnail ml-3 align-self-center">
+            </div>
+        </div>
+    </div>
+
 </div>
 
 {% endblock %}
