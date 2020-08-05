@@ -14,8 +14,3 @@ img.stp {
     display: block;
     margin: 10px;
 }
-
-.iconright {
-    display: flex;
-    justify-content: space-between;
-}
