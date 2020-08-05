@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container routeform">
+    <form action="">
+        <div class="form-row align-items-center">
+            <div class="form-group col-12 offset-sm-3 col-sm-3" style="padding-top: 15px;">
+                <p> Source: {{ routeForm.source }} </p> 
+            </div>
+
+            <div class="form-group col-12 col-sm-3" style="padding-top: 15px;">
+                <p> Destination: {{ routeForm.destination }} </p>
+            </div>
+
+            <div class="form-group col-12 col-sm-3">
+                <button type="submit" class="btn btn-dark ml-auto mb-auto"> Submit </button>                
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
