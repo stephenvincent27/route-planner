@@ -4,9 +4,26 @@ from .forms import routeBetweenForm
 
 from .models import Station
 
+def findRouteResult_view(request):
+
+    context = {
+        "page_title": 'Find Route: Result',
+        "home_isActive": 'active',
+        "listOfStations": '',
+        "about_isActive": '',
+    }
+
+    return render(request, '../templates/routeformresult.html', context)
+
 def findRoute_view(request):
 
-    routeForm = routeBetweenForm()
+    if(request.method == 'POST'):
+        form  = routeBetweenForm(request.POST)
+
+        if form.is_valid():
+            return findRouteResult_view(request)
+    else:
+        routeForm = routeBetweenForm()
 
     context = {
         "page_title": 'Find Route',
