@@ -3,7 +3,6 @@ body {
 }
 
 .media {
-    padding: 20px 100px;
     border: 1px;
     border-style: solid;
     margin: 10px 0px;
@@ -21,6 +20,6 @@ img.stp {
 .routeform {
     padding: 20px 0px;
     border: 1px;
-    border-style: dashed;
+    border-style: solid;
     margin-bottom: 20px;
 }
