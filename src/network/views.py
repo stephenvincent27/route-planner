@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.contrib import messages
 
 from .forms import routeBetweenForm
 
@@ -17,13 +18,34 @@ def findRouteResult_view(request):
 
 def findRoute_view(request):
 
-    if(request.method == 'POST'):
-        form  = routeBetweenForm(request.POST)
+    routeForm = routeBetweenForm(request.POST or None)
 
-        if form.is_valid():
-            return findRouteResult_view(request)
+    if routeForm.is_valid():
+        return findRouteResult_view(request)
     else:
-        routeForm = routeBetweenForm()
+        messages.info(request, "Source and destination cannot be the same.")
+        #routeForm = routeBetweenForm()
+
+    #if(request.method == 'POST'):
+    #    print("OK")
+    #    routeForm = routeBetweenForm(request.POST)
+
+        #src = request.POST['source']
+        #dest = request.POST['destination']
+
+        #print(src, dest)
+
+        #if src == dest:
+            #return forms.ValidationError("Source and destination cannot be the same.")
+
+    #    if routeForm.is_valid():
+    #        return findRouteResult_view(request)
+    #    else:
+    #        pass
+    #else:
+    #    routeForm = routeBetweenForm()
+
+    #print("OK")
 
     context = {
         "page_title": 'Find Route',
