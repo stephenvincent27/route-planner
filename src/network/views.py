@@ -4,13 +4,18 @@ from .forms import routeBetweenForm
 
 from .models import Station
 
+#import logic
+
 def findRouteResult_view(request):
+
+    routeForm = routeBetweenForm(request.POST or None)
 
     context = {
         "page_title": 'Find Route: Result',
         "home_isActive": 'active',
         "listOfStations": '',
         "about_isActive": '',
+        "routeForm": routeForm,
     }
 
     return render(request, '../templates/routeformresult.html', context)
@@ -21,36 +26,12 @@ def findRoute_view(request):
     msg = None
     msgType = None
 
-    print(routeForm.is_valid())
-    print(request.method)
-
     if routeForm.is_valid():
         return findRouteResult_view(request)
     elif request.POST:
         msg = 'Source and destination cannot be the same.'
         msgType = 'alert-danger'
-        #routeForm = routeBetweenForm()
-
-    #if(request.method == 'POST'):
-    #    print("OK")
-    #    routeForm = routeBetweenForm(request.POST)
-
-        #src = request.POST['source']
-        #dest = request.POST['destination']
-
-        #print(src, dest)
-
-        #if src == dest:
-            #return forms.ValidationError("Source and destination cannot be the same.")
-
-    #    if routeForm.is_valid():
-    #        return findRouteResult_view(request)
-    #    else:
-    #        pass
-    #else:
-    #    routeForm = routeBetweenForm()
-
-    #print("OK")
+        routeForm = routeBetweenForm()
 
     context = {
         "page_title": 'Find Route',

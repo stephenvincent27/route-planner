@@ -1,5 +1,22 @@
-{% extends 'base.html' %}
+{% extends 'routeform.html' %}
 
-{% block content %}
+{% comment %}
+
+Station list: stationList
+trackList: trackList
+
+{% endcomment %}
+
+{% block content2 %}
+
+<br>
+
+{% for station in stationList %}
+
+    {% if forloop.first %}
+
+    {% endif %}
+
+{% endfor %}
 
 {% endblock %}
