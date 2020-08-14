@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.contrib import messages
 
 from .forms import routeBetweenForm
 
@@ -19,11 +18,17 @@ def findRouteResult_view(request):
 def findRoute_view(request):
 
     routeForm = routeBetweenForm(request.POST or None)
+    msg = None
+    msgType = None
+
+    print(routeForm.is_valid())
+    print(request.method)
 
     if routeForm.is_valid():
         return findRouteResult_view(request)
-    else:
-        messages.info(request, "Source and destination cannot be the same.")
+    elif request.POST:
+        msg = 'Source and destination cannot be the same.'
+        msgType = 'alert-danger'
         #routeForm = routeBetweenForm()
 
     #if(request.method == 'POST'):
@@ -53,6 +58,8 @@ def findRoute_view(request):
         "listOfStations": '',
         "about_isActive": '',
         "routeForm": routeForm,
+        "message": msg,
+        "message_type": msgType,
     }
 
     return render(request, '../templates/routeform.html', context)

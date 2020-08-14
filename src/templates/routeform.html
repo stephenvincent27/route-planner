@@ -1,15 +1,19 @@
 {% extends 'base.html' %}
 
-{% if messages %}
-<ul class="messages">
-    {% for message in messages %}
-    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
-        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
-        {{ message }}
-    </li>
-    {% endfor %}
-</ul>
+{% block alert %}
+
+{% if message %}
+<div class="container-fluid p-0">
+    <div class="alert {{ message_type }} alert-dismissible" role="alert" >
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      {{ message }}
+    </div>
+  </div>
 {% endif %}
+
+{% endblock %}
 
 {% block content %}
 
@@ -25,7 +29,7 @@
             </div>
 
             <div class="form-group col-12 col-sm-3">
-                <button type="submit" class="btn btn-dark ml-auto mb-auto"> Submit </button>                
+                <button type="submit" class="btn btn-dark ml-auto mb-auto"> Find Route </button>                
             </div>
         </div>
     </form>
