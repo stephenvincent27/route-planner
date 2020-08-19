@@ -4,6 +4,7 @@
 
 Station list: stationList
 trackList: trackList
+Is there a line change? lineChange
 
 {% endcomment %}
 
@@ -11,12 +12,34 @@ trackList: trackList
 
 <br>
 
-{% for station in stationList %}
+{% comment %}
+
+{% for track in trackList %}
 
     {% if forloop.first %}
+        <div class="container">
+            <p> Get on at {{ track.source }} Station. </p>
+        </div>
+    {% endif %}
+    
+    {% if lineChange.forloop.counter0 %}
+        <div class="container">
+            <p> Change line at {{ track.source }} Station. </p>
+        </div>
+    {% endif %}
 
+    <div class="container">
+        <p> {{ track.source }} Station to {{ track.destination }} Station </p>
+    </div>
+    
+    {if forloop.last %}
+        <div class="container">
+            <p> Get off at {{ track.destination }} Station. </p>
+        </div>
     {% endif %}
 
 {% endfor %}
+
+{% endcomment %}
 
 {% endblock %}

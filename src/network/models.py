@@ -9,8 +9,8 @@ class Station(models.Model):
 class Line(models.Model):
     line_color      = models.CharField(max_length=50, blank=False)
     line_color_code = models.CharField(max_length=10, blank=False)
-    line_fare = models.DecimalField(max_digits=8, decimal_places=2, blank=True)
-    average_speed = models.PositiveIntegerField()
+    line_fare       = models.DecimalField(max_digits=8, decimal_places=2, blank=True)
+    average_speed   = models.PositiveIntegerField()
 
     def __str__(self):
         return self.line_color
