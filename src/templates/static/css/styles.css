@@ -3,8 +3,6 @@ body {
 }
 
 .media {
-    border: 1px;
-    border-style: solid;
     margin: 10px 0px;
 }
 
@@ -27,4 +25,9 @@ img.stp {
 .footer {
     padding-top: 10px;
     color: floralwhite;
+}
+
+.mastfoot {
+    padding-top: 15px;
+    color: rgba(255, 255, 255, .5);
 }
