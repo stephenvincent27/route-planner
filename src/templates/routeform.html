@@ -19,16 +19,20 @@
 
 <div class="container routeform border rounded">
     <form method=POST> {% csrf_token %}
-        <div class="form-row align-items-center">
-            <div class="form-group col-12 offset-sm-3 col-sm-3" style="padding-top: 15px;">
-                <p> Source: {{ routeForm.source }} </p> 
+        <div class="form-row align-items-center justify-content-center">
+            <div class="col-3 col-sm-auto text-right">Source:</div>
+            <div class="form-group col-9 col-sm-auto text-center" style="padding-top: 15px;">
+                {{ routeForm.source }}
             </div>
 
-            <div class="form-group col-12 col-sm-3" style="padding-top: 15px;">
-                <p> Destination: {{ routeForm.destination }} </p>
+            <div class="col-sm-1"> </div>
+
+            <div class="col-3 col-sm-auto text-right">Destination:</div>
+            <div class="form-group col-9 col-sm-auto text-center" style="padding-top: 15px;">
+                {{ routeForm.destination }}
             </div>
 
-            <div class="form-group col-12 col-sm-3">
+            <div class="form-group col-12 text-center" style="padding-top: 15px;">
                 <button type="submit" class="btn btn-dark ml-auto mb-auto"> Find Route </button>                
             </div>
         </div>
