@@ -1,11 +1,28 @@
 body {
-    display: block;
     padding-top: 50px;
     margin-bottom: 50px;
-}
+} 
+
+@keyframes fadeInAnimation { 
+	0% { 
+		opacity: 0; 
+	} 
+	100% { 
+		opacity: 1; 
+	} 
+} 
 
 .media {
+    animation: fadeInAnimation ease 2s;
+    animation-iteration-count: 1; 
+    animation-fill-mode: forwards; 
+
     margin: 10px 0px;
+}
+
+#divy {
+    opacity: 0;
+    animation-delay: 1s;
 }
 
 img.stp {
@@ -25,16 +42,8 @@ img.stp {
 }
 
 .footer {
-    padding-top: 10px;
-    color: floralwhite;
-}
-
-.mastfoot {
-    position: absolute;
-    bottom: 0;
     width: 100%;
     height: 50px;
     line-height: 50px;
-    padding-top: 15px;
     color: rgba(255, 255, 255, .5);
 }
