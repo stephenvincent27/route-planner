@@ -4,8 +4,8 @@
 
 **Here's a quick sneak peek!**
 
-![Find Route page](img/Find Route page.png)
+![Find Route page](https://github.com/stephenvincent27/route-planner/blob/master/img/Find%20Route%20page.png)
 
-![List Of Stations page](img/List Of Stations page.png)
+![List Of Stations page](https://github.com/stephenvincent27/route-planner/blob/master/img/List%20Of%20Stations%20page.png)
 
-![About page](img/About page.png)
+![About page](https://github.com/stephenvincent27/route-planner/blob/master/img/About%20page.png)
