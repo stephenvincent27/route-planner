@@ -1,6 +1,8 @@
 # Route Planner for Urban Rail Transit System
 
-*(Work In Progress :soon:)*
+A web application inspired by the [*Delhi Metro Rail Information*](https://delhimetrorail.info/) website.
+
+### *(Work In Progress :soon:)*
 
 **Here's a quick sneak peek!**
 
