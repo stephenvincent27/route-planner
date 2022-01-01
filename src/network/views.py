@@ -2,13 +2,15 @@ from django.shortcuts import render
 
 from .forms import routeBetweenForm
 
+from .logic import dijkstra
+
 from .models import Station
 
-#import logic
-
-def findRouteResult_view(request):
+def findRouteResult_view(request, source, destination):
 
     routeForm = routeBetweenForm(request.POST or None)
+
+    trackList= dijkstra(source, destination)
 
     context = {
         "page_title": 'Find Route: Result',
@@ -16,6 +18,7 @@ def findRouteResult_view(request):
         "listOfStations": '',
         "about_isActive": '',
         "routeForm": routeForm,
+        "trackList": trackList,
     }
 
     return render(request, '../templates/routeformresult.html', context)
@@ -27,7 +30,10 @@ def findRoute_view(request):
     msgType = None
 
     if routeForm.is_valid():
-        return findRouteResult_view(request)
+        source      = str(Station.objects.order_by('station_name')[int(routeForm.cleaned_data['source'])])
+        destination = str(Station.objects.order_by('station_name')[int(routeForm.cleaned_data['destination'])])
+        
+        return findRouteResult_view(request, source, destination)
     elif request.POST:
         msg = 'Source and destination cannot be the same.'
         msgType = 'alert-danger'

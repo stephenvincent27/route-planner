@@ -12,34 +12,30 @@ Is there a line change? lineChange
 
 <br>
 
-{% comment %}
-
 {% for track in trackList %}
 
     {% if forloop.first %}
         <div class="container">
-            <p> Get on at {{ track.source }} Station. </p>
+            <p> Get on at {{ track.0 }} Station on {{ track.2 }} line. </p>
         </div>
     {% endif %}
     
-    {% if lineChange.forloop.counter0 %}
+    {% if track.3 %}
         <div class="container">
-            <p> Change line at {{ track.source }} Station. </p>
+            <p> Change to the {{ track.2 }} line at {{ track.0 }} Station. </p>
         </div>
     {% endif %}
 
     <div class="container">
-        <p> {{ track.source }} Station to {{ track.destination }} Station </p>
+        <p> {{ track.0 }} Station to {{ track.1 }} {{ lineChange.forloop.counter0 }} Station </p>
     </div>
     
-    {if forloop.last %}
+    {% if forloop.last %}
         <div class="container">
-            <p> Get off at {{ track.destination }} Station. </p>
+            <p> Get off at {{ track.1 }} Station. </p>
         </div>
     {% endif %}
 
 {% endfor %}
-
-{% endcomment %}
 
 {% endblock %}
