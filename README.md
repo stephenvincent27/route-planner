@@ -1,11 +1,13 @@
 # Route Planner for Urban Rail Transit System
 
-*(Work In Progress :soon:)*
+A web application inspired by the [*Delhi Metro Rail Information*](https://delhimetrorail.info/) website.
+
+### *(Work In Progress :soon:)*
 
 **Here's a quick sneak peek!**
 
-![Find Route page](https://drive.google.com/file/d/1vwk704TaRzjPJVAocoS9t-JmYAU9-YpD/view?usp=sharing)
+![Find Route page](https://github.com/stephenvincent27/route-planner/blob/master/img/Find%20Route%20page.png)
 
-![List Of Stations page](https://drive.google.com/file/d/1EiKOwkekdyBxJ1lum0z9Cjt10T4skuQf/view?usp=sharing)
+![List Of Stations page](https://github.com/stephenvincent27/route-planner/blob/master/img/List%20Of%20Stations%20page.png)
 
-![About page](https://drive.google.com/file/d/1oBNEsjzuCx4dxSdIr4MrSJn976zJO2qf/view?usp=sharing)
+![About page](https://github.com/stephenvincent27/route-planner/blob/master/img/About%20page.png)
