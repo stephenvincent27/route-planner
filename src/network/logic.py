@@ -48,10 +48,24 @@ def dijkstra(source, destination):
             parentStation[nextStation] = (currentStation, nextLine)
             stationQueue.append((nextStation, nextLine))
 
+    alertColor = {
+        "Red": 'alert-danger',
+        "Blue": 'alert-info',
+        "Yellow": 'alert-warning',
+        "Green": 'alert-success',
+        "Violet": 'alert-violet',
+    }
+
     currentStation = destination
 
     while currentStation != source:
-        trackList.append([parentStation[currentStation][0], currentStation, parentStation[currentStation][1], False])
+        trackList.append([
+            parentStation[currentStation][0],                   # from
+            currentStation,                                     # to
+            parentStation[currentStation][1],                   # line
+            False,                                              # did the line change (updated later)
+            alertColor[str(parentStation[currentStation][1])],  # corresponding alert color
+        ])
         currentStation = parentStation[currentStation][0]
 
     trackList.reverse()

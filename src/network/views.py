@@ -12,6 +12,14 @@ def findRouteResult_view(request, source, destination):
 
     trackList= dijkstra(source, destination)
 
+    alertColor = {
+        "Red": 'alert-danger',
+        "Blue": 'alert-info',
+        "Yellow": 'alert-warning',
+        "Green": 'alert-success',
+        "Purple": 'alert-dark',
+    }
+
     context = {
         "page_title": 'Find Route: Result',
         "home_isActive": 'active',
@@ -19,6 +27,7 @@ def findRouteResult_view(request, source, destination):
         "about_isActive": '',
         "routeForm": routeForm,
         "trackList": trackList,
+        "alertColor": alertColor,
     }
 
     return render(request, '../templates/routeformresult.html', context)
