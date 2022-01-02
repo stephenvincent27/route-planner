@@ -1,13 +1,5 @@
 {% extends 'routeform.html' %}
 
-{% comment %}
-
-Station list: stationList
-trackList: trackList
-Is there a line change? lineChange
-
-{% endcomment %}
-
 {% block content2 %}
 
 <br>
@@ -15,25 +7,36 @@ Is there a line change? lineChange
 {% for track in trackList %}
 
     {% if forloop.first %}
+        <hr>
         <div class="container">
-            <p> Get on at {{ track.0 }} Station on {{ track.2 }} line. </p>
+            <div class="alert {{ track.4 }}" role="alert" >
+                <p class="text-center"> Get on at {{ track.0 }} Station on {{ track.2 }} line. </p>
+            </div>
         </div>
     {% endif %}
     
     {% if track.3 %}
+        <hr>
         <div class="container">
-            <p> Change to the {{ track.2 }} line at {{ track.0 }} Station. </p>
+            <div class="alert {{ track.4 }}" role="alert" >
+                <p class="text-center"> Change to the {{ track.2 }} line at {{ track.0 }} Station. </p>
+            </div>
         </div>
     {% endif %}
 
     <div class="container">
-        <p> {{ track.0 }} Station to {{ track.1 }} {{ lineChange.forloop.counter0 }} Station </p>
+        <div class="alert {{ track.4 }}" role="alert" >
+            <p class="text-center"> {{ track.0 }} Station to {{ track.1 }} Station </p>
+        </div>
     </div>
     
     {% if forloop.last %}
         <div class="container">
-            <p> Get off at {{ track.1 }} Station. </p>
+            <div class="alert {{ track.4 }}" role="alert" >
+                <p class="text-center"> Get off at {{ track.1 }} Station. </p>
+            </div>
         </div>
+        <hr>
     {% endif %}
 
 {% endfor %}
