@@ -45,3 +45,8 @@ img.stp {
     line-height: 50px;
     color: rgba(255, 255, 255, .5);
 }
+
+.alert-violet {
+    background-color: rgb(157, 123, 189);
+    color: rgb(57, 17, 94);
+}
